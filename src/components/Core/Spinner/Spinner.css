@@ -1,0 +1,20 @@
+.Spinner {
+  display: inline-block;
+  border: 2px solid;
+  border-color: black transparent black black;
+  border-radius: 50%;
+
+  animation-duration: 0.75s;
+  animation-iteration-count: infinite;
+  animation-name: rotate-forever;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate-forever {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

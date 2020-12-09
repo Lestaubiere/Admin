@@ -1,0 +1,147 @@
+.Input {
+  position: relative;
+
+  transition: margin 0.3s ease;
+}
+
+.Input__header {
+  margin-bottom: 10px;
+}
+
+.Input__label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.Input__optional {
+  margin-left: 5px;
+  color: var(--color-grey-80);
+  font-weight: normal;
+}
+
+.Input__annotation {
+  color: var(--color-grey-70);
+}
+
+.Input__container {
+  transition: padding 0.3s ease;
+}
+
+.Input__input-container {
+  position: relative;
+  background-color: #ffffff;
+}
+
+.Input__input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding: 17px 15px;
+  color: var(--color-grey-60);
+  border: 1px solid var(--color-grey-border);
+  line-height: 1.5;
+  z-index: 1;
+
+  transition: color 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.Input__input::-webkit-input-placeholder {
+  color: var(--color-grey-20);
+  font-style: italic;
+}
+
+.Input__input:-webkit-autofill,
+.Input__input:-webkit-autofill:hover,
+.Input__input:-webkit-autofill:focus,
+.Input__input:-webkit-autofill:active {
+  transition: color 0.3s ease, opacity 0.3s ease, border-color 0.3s ease,
+    background-color 0s ease-out 9999s;
+}
+
+.Input__input::-webkit-clear-button {
+  display: none;
+}
+
+.Input__input::-webkit-inner-spin-button,
+.Input__input::-webkit-outer-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0;
+}
+
+.Input__input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.Input__passsword-toggle {
+  position: absolute;
+  top: 21px;
+  right: 10px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.Input__passsword-toggle:focus {
+  outline: none;
+}
+
+.Input__passsword-toggle::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  width: 0px;
+  height: 2px;
+  background-color: #b2b6c3;
+  transform: rotate(-45deg);
+
+  transition: width 0.3s ease, right 0.3s ease;
+}
+
+.Input__errors {
+  position: absolute;
+  top: 34px;
+  color: var(--color-error);
+  font-size: 14px;
+  line-height: 1.1;
+  z-index: -1;
+
+  transition: top 0.3s ease;
+}
+
+/* NO VALUE STATE */
+.Input.Input--no-value .Input__input {
+  color: var(--color-grey-20);
+}
+
+/* DISABLED STATE */
+.Input.Input--disabled .Input__input {
+  opacity: 0.5;
+}
+
+/* PASSWORD TOGGLE STATE */
+.Input.Input--has-password-toggle .Input__input {
+  padding-right: 44px;
+}
+
+.Input.Input--password-is-visible .Input__passsword-toggle::after {
+  width: 26px;
+  right: -1px;
+}
+
+/* ERROR STATE */
+.Input.Input--has-error .Input__container {
+  padding-bottom: 16px;
+}
+
+.Input.Input--has-error .Input__input {
+  border-color: var(--color-error);
+}
+
+.Input.Input--has-error .Input__errors {
+  top: calc(100% - 12px);
+}

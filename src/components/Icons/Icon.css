@@ -1,0 +1,11 @@
+.Icon {
+  display: flex;
+}
+
+.Icon__fill {
+  transition: fill 0.3s ease;
+}
+
+.Icon__stroke {
+  transition: stroke 0.3s ease;
+}

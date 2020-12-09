@@ -1,0 +1,30 @@
+:root {
+  --color-primary: rgba(78, 53, 180, 1);
+  --color-primary--hover: rgba(78, 53, 180, 0.9);
+  --color-secondary: rgba(217, 35, 127, 1);
+  --color-secondary--hover: rgba(217, 35, 127, 0.9);
+  --color-tertiary: rgba(90, 181, 191, 1);
+  --color-tertiary--light: rgba(90, 181, 191, 0.1);
+  --color-tertiary--lightest: rgba(90, 181, 191, 0.05);
+
+  --color-text: #010e36;
+
+  --color-grey-background: #f7f7fd;
+  --color-grey-border: #e5e6ea;
+
+  --color-error: #cf5853;
+
+  --color-grey-2: rgba(1, 14, 54, 0.02);
+  --color-grey-5: rgba(1, 14, 54, 0.05);
+  --color-grey-10: rgba(1, 14, 54, 0.1);
+  --color-grey-15: rgba(1, 14, 54, 0.15);
+  --color-grey-20: rgba(1, 14, 54, 0.2);
+  --color-grey-30: rgba(1, 14, 54, 0.3);
+  --color-grey-40: rgba(1, 14, 54, 0.4);
+  --color-grey-50: rgba(1, 14, 54, 0.5);
+  --color-grey-60: rgba(1, 14, 54, 0.6);
+  --color-grey-70: rgba(1, 14, 54, 0.7);
+  --color-grey-80: rgba(1, 14, 54, 0.8);
+  --color-grey-90: rgba(1, 14, 54, 0.9);
+  --color-grey-100: rgba(1, 14, 54, 1);
+}

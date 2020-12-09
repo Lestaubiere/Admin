@@ -1,0 +1,40 @@
+.Header {
+  padding: 40px 32px 0 136px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.Header__breadcrumbs {
+  display: flex;
+  align-items: center;
+}
+
+.Header__breadcrumbs-item {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.Header__breadcrumbs-item:not(:last-of-type)::after {
+  content: '';
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  margin: 0 10px 0 8px;
+  border-style: solid;
+  border-width: 1px 1px 0 0;
+  border-color: #ffffff;
+  transform: rotate(45deg);
+}
+
+.Header__breadcrumbs-item.Header__breadcrumbs-item--is-active {
+  font-weight: 500;
+}
+
+.Header__content {
+  padding: 24px 0;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.5;
+}

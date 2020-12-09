@@ -1,0 +1,37 @@
+.Counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  border-radius: 4px;
+  min-width: 22px;
+  height: 22px;
+
+  /* ANIMATIONS */
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Counter__value {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* CLEAR TYPE */
+.Counter.Counter--clear {
+  background-color: #ffffff;
+  color: var(--color-primary);
+}
+
+/* PRIMARY TYPE */
+.Counter.Counter--primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* SECONDARY TYPE */
+.Counter.Counter--secondary {
+  background: #666699;
+  color: #ffffff;
+}

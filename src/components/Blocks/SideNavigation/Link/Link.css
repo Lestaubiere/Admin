@@ -1,0 +1,75 @@
+.SideNavigation-Link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 18px 20px;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+
+  /* ANIMATIONS */
+
+  transition: background-color 0.3s ease;
+}
+
+.SideNavigation-Link:last-child {
+  margin-bottom: 0;
+}
+
+.SideNavigation-Link:hover {
+  background-color: var(--color-tertiary--lightest);
+}
+
+.SideNavigation-Link__icon-container {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.SideNavigation-Link__icon {
+  position: relative;
+}
+
+.SideNavigation-Link__icon svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.SideNavigation-Link__alert {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+}
+
+.SideNavigation-Link__label {
+  flex-shrink: 0;
+  color: var(--color-text);
+  opacity: 0;
+
+  /* ANIMATIONS */
+
+  transition: opacity 0.2s ease;
+  transition-delay: 0.1s;
+}
+
+/* IS ACTIVE STATE */
+.SideNavigation-Link.SideNavigation-Link--is-active {
+  background-color: var(--color-tertiary--light);
+}
+
+/* IS EXTENDED STATE */
+.SideNavigation.SideNavigation--is-extended .SideNavigation-Link__label {
+  opacity: 1;
+
+  /* ANIMATIONS */
+
+  transition-delay: 0s;
+}

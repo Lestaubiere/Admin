@@ -1,0 +1,79 @@
+.TopNavigation-Link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  padding: 16px;
+  background-color: transparent;
+  color: #ffffff;
+  border-radius: 4px 4px 0 0;
+  text-decoration: none;
+
+  /* ANIMATIONS */
+
+  transition: background-color 0.3s ease;
+}
+
+.TopNavigation-Link:last-child {
+  margin-right: 0;
+}
+
+.TopNavigation-Link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.TopNavigation-Link__icon {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.TopNavigation-Link__icon svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.TopNavigation-Link__icon .Icon__fill {
+  fill: #ffffff;
+}
+
+.TopNavigation-Link__icon .Icon__stroke {
+  stroke: #ffffff;
+}
+
+.TopNavigation-Link__label {
+  transition: color 0.3s ease;
+}
+
+.TopNavigation-Link__counter {
+  margin-left: 16px;
+}
+
+.TopNavigation-Link__alert {
+  display: flex;
+  margin-left: 8px;
+}
+
+/* ACTIVE STATE */
+.TopNavigation-Link.TopNavigation-Link--is-active {
+  background-color: #ffffff;
+}
+
+.TopNavigation-Link.TopNavigation-Link--is-active .TopNavigation-Link__icon .Icon__fill {
+  fill: var(--color-primary);
+}
+
+.TopNavigation-Link.TopNavigation-Link--is-active .TopNavigation-Link__icon .Icon__stroke {
+  stroke: var(--color-primary);
+}
+
+.TopNavigation-Link.TopNavigation-Link--is-active .TopNavigation-Link__label {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.TopNavigation-Link.TopNavigation-Link--is-active .TopNavigation-Link__counter .Counter {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}

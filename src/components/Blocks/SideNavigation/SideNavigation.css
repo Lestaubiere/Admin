@@ -1,0 +1,56 @@
+.SideNavigation {
+  position: fixed;
+  top: 40px;
+  left: 24px;
+  width: 80px;
+  max-height: calc(100% - 80px);
+  padding: 40px 8px 10px 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 60px 0 rgba(53, 44, 211, 0.1);
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #ffffff;
+  z-index: 100;
+
+  /* ANIMATIONS */
+
+  transition: width 0.3s ease;
+}
+
+.SideNavigation__header {
+  position: relative;
+  margin: 0 20px 60px 20px;
+}
+
+.SideNavigation__logo {
+  height: 40px;
+}
+
+.SideNavigation__logo.SideNavigation__logo--extended {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+
+  /* ANIMATIONS */
+
+  transition: opacity 0.2s ease;
+  transition-delay: 0.1s;
+}
+
+a:not(.SideNavigation__item--is-active):hover > .SideNavigation__item {
+  opacity: 0.2;
+}
+
+/* EXTENDED STATE */
+.SideNavigation.SideNavigation--is-extended {
+  width: 240px;
+}
+
+.SideNavigation.SideNavigation--is-extended .SideNavigation__logo.SideNavigation__logo--extended {
+  opacity: 1;
+
+  /* ANIMATIONS */
+
+  transition-delay: 0s;
+}

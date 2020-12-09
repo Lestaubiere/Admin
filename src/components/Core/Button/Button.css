@@ -1,0 +1,147 @@
+.Button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+
+  transition: opacity 0.3s ease;
+}
+
+.Button:hover {
+  text-decoration: underline;
+}
+
+.Button__label {
+  display: inline-flex;
+}
+
+.Button__icon {
+  display: inline-flex;
+}
+
+.Button__loader {
+  position: absolute;
+  top: calc(50% - 9px);
+  left: calc(50% - 9px);
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
+}
+
+.Button__loader .Spinner {
+  width: 18px;
+  height: 18px;
+}
+
+/* PRIMARY STATE */
+.Button.Button--primary {
+  height: 37px;
+  padding: 0 16px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.Button.Button--primary:hover {
+  background-color: var(--color-primary--hover);
+  text-decoration: none;
+}
+
+.Button.Button--primary .Button__loader .Spinner {
+  border-color: #ffffff transparent #ffffff #ffffff !important;
+}
+
+/* SECONDARY STATE */
+.Button.Button--secondary {
+  height: 37px;
+  padding: 0 16px;
+  background-color: var(--color-grey-5);
+  color: var(--color-primary);
+  border-radius: 13px;
+  font-weight: 500;
+}
+
+.Button.Button--secondary:hover {
+  background-color: var(--color-grey-10);
+  text-decoration: none;
+}
+
+/* WHITE STATE */
+.Button.Button--white {
+  height: 37px;
+  padding: 0 16px;
+  background-color: #ffffff;
+  color: var(--color-primary);
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.Button.Button--white:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+}
+
+/* BORDERED STATE */
+.Button.Button--bordered {
+  height: 37px;
+  padding: 0 16px;
+  background-color: #ffffff;
+  color: var(--color-primary);
+  border: 1px solid var(--color-grey-10);
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.Button.Button--bordered:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+}
+
+/* ICON STATE */
+.Button.Button--has-icon.Button--icon-right {
+  flex-direction: row-reverse;
+}
+
+.Button.Button--has-icon.Button--icon-left:not(.Button--icon-only) .Button__icon {
+  margin-right: 16px;
+}
+
+.Button.Button--has-icon.Button--icon-right:not(.Button--icon-only) .Button__icon {
+  margin-left: 16px;
+}
+
+.Button.Button.Button--has-icon.Button--icon-only {
+  padding: 0 4px;
+  min-width: 30px;
+  justify-content: center;
+}
+
+/* LOADING STATE */
+.Button.Button--loading {
+  pointer-events: none;
+}
+
+.Button.Button--loading .Button__label {
+  opacity: 0.2;
+}
+
+.Button.Button--loading .Button__icon {
+  opacity: 0.2;
+}
+
+.Button.Button--loading .Button__loader {
+  display: block;
+  opacity: 1;
+}
+
+/* DISABLED STATE */
+.Button.Button--disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
