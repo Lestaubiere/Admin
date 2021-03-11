@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { Counter, Notification } from '../../../Core';
@@ -31,7 +31,6 @@ interface Props {
 export function TopNavigationLink(props: Props) {
   return (
     <NavLink
-      exact
       to={props.to}
       className="TopNavigation-Link"
       activeClassName="TopNavigation-Link--is-active"

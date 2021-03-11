@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import { Redirect, Route, Switch, useLocation } from 'react-router';
 
-import { getBookings } from '../../../store/booking';
+import { Statuses } from '../../../types';
+import { State } from '../../../store';
 
 import { TopNavigation, TopNavigationLink } from '../../Blocks';
 import { Header } from '..';
-import Bookings from './Bookings';
+import { Bookings } from './Bookings';
 import Clients from './Clients';
 
 import { Home } from '../../Icons';
@@ -14,12 +15,11 @@ import { Home } from '../../Icons';
 import './ClientManagement.css';
 
 function ClientManagement() {
-  const location = useLocation();
-  const dispatch = useDispatch();
+  const { newBookings } = useSelector((state: State) => ({
+    newBookings: state.statisticsState.newBookings,
+  }));
 
-  useEffect(() => {
-    dispatch(getBookings());
-  }, [dispatch]);
+  const location = useLocation();
 
   return (
     <div className="ClientManagement">
@@ -29,8 +29,8 @@ function ClientManagement() {
             label="Réservations"
             icon={<Home />}
             to="/gestion-clients/reservations"
-            count={2}
-            hasAlert
+            count={newBookings}
+            hasAlert={newBookings > 0}
           />
           <TopNavigationLink label="Clients" icon={<Home />} to="/gestion-clients/clients" />
         </TopNavigation>
@@ -38,8 +38,10 @@ function ClientManagement() {
       <div className="ClientManagement__content">
         <Switch location={location}>
           <Redirect exact path="/gestion-clients" to="/gestion-clients/reservations" />
-          <Route path="/gestion-clients/reservations" component={Bookings} />
-          <Route path="/gestion-clients/clients" component={Clients} />
+          <Route exact path="/gestion-clients/reservations" component={Bookings} />
+          <Route path="/gestion-clients/reservations/:id" component={Bookings} />
+          <Route exact path="/gestion-clients/clients" component={Clients} />
+          <Route path="/gestion-clients/clients/:id" component={Clients} />
         </Switch>
       </div>
     </div>

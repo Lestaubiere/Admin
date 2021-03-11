@@ -1,5 +1,6 @@
-import React, { useState, useEffect, ChangeEvent } from 'react';
+import { useState, useEffect, ChangeEvent } from 'react';
 import NumberFormat from 'react-number-format';
+import PhoneInput from 'react-phone-input-2';
 import classNames from 'classnames';
 
 import { View } from '../../Icons';
@@ -53,6 +54,15 @@ function Input(props: Props) {
     props.onChange(props.name, value);
   }
 
+  function handlePhoneChange(
+    _value: string,
+    _data: any,
+    _event: ChangeEvent<HTMLInputElement>,
+    formattedValue: string,
+  ) {
+    props.onChange(props.name, formattedValue.replaceAll(' ', ''));
+  }
+
   function handlePasswordToggle() {
     setShowPassword(!showPassword);
   }
@@ -69,16 +79,16 @@ function Input(props: Props) {
     switch (props.type) {
       case 'tel':
         return (
-          <NumberFormat
-            className="Input__input"
-            type="tel"
+          <PhoneInput
+            country="fr"
             value={props.value || ''}
-            name={props.name}
-            format="## ## ## ## ##"
             placeholder={props.placeholder}
             disabled={props.disabled}
-            tabIndex={props.tabIndex}
-            onValueChange={handleNumberChange}
+            enableSearch
+            searchPlaceholder="Rechercher un indicatif"
+            searchNotFound="Aucun indicatif correspond à votre recherche"
+            inputProps={{ className: 'Input__input', tabIndex: props.tabIndex }}
+            onChange={handlePhoneChange}
             onBlur={props.onBlur}
           />
         );
@@ -136,10 +146,6 @@ function Input(props: Props) {
         <div className="Input__header">
           <label className="Input__label" htmlFor={props.name}>
             {props.label}
-            {!props.required && <span className="Input__optional">(facultatif)</span>}
-            {props.showRequired && props.required && (
-              <span className="Input__optional">(obligatoire)</span>
-            )}
           </label>
           {props.annotation && <div className="Input__annotation">{props.annotation}</div>}
         </div>

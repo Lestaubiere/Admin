@@ -1,14 +1,18 @@
-import { Booking } from '../../types';
+import { Booking, Meta } from '../../types';
 
 export enum BookingActions {
-  FETCH_BOOKINGS__REQUEST = '@@app/FETCH_BOOKINGS__REQUEST',
-  FETCH_BOOKINGS__SUCCESS = '@@app/FETCH_BOOKINGS__SUCCESS',
-  FETCH_BOOKINGS__FAIL = '@@app/FETCH_BOOKINGS__FAIL',
+  FETCH_BOOKINGS__REQUEST = '@@booking/FETCH_BOOKINGS__REQUEST',
+  FETCH_BOOKINGS__SUCCESS = '@@booking/FETCH_BOOKINGS__SUCCESS',
+  FETCH_BOOKINGS__FAIL = '@@booking/FETCH_BOOKINGS__FAIL',
+
+  SET_BOOKING = '@@booking/SET_BOOKING',
 }
 
 export type BookingState = {
+  initialLoading: boolean;
   loading: boolean;
   bookings: Booking[];
+  meta?: Meta;
 };
 
 type getBookingsRequestActionType = {
@@ -17,7 +21,7 @@ type getBookingsRequestActionType = {
 
 type getBookingsSuccessActionType = {
   type: BookingActions.FETCH_BOOKINGS__SUCCESS;
-  payload: Booking[];
+  payload: { data: Booking[]; meta: Meta };
 };
 
 type getBookingsFailActionType = {
@@ -29,4 +33,9 @@ export type getBookingsActionType =
   | getBookingsSuccessActionType
   | getBookingsFailActionType;
 
-export type BookingActionTypes = getBookingsActionType;
+export type setBookingActionType = {
+  type: BookingActions.SET_BOOKING;
+  payload: { id: string | number; booking: Booking };
+};
+
+export type BookingActionTypes = getBookingsActionType | setBookingActionType;

@@ -1,0 +1,10 @@
+.Toastify__toast.Toastify__toast--info {
+  background-color: #ffffff;
+  color: var(--color-text);
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(53, 44, 211, 0.1);
+}
+
+.Toastify__toast.Toastify__toast--info .Toastify__close-button {
+  color: var(--color-text);
+}

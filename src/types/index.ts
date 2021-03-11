@@ -6,4 +6,6 @@ declare global {
 
 export * from './BackendError';
 export * from './Booking';
+export * from './Client';
+export * from './Pagination';
 export * from './User';

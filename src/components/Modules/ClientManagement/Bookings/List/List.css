@@ -1,0 +1,15 @@
+.CM-BookingsList .CM-BookingsList__content {
+  transition: opacity 0.3s ease;
+}
+
+.CM-BookingsList.CM-BookingsList--loading .CM-BookingsList__content {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.CM-BookingsList__empty {
+  padding: 24px 40px;
+  background-color: #ffffff;
+  color: var(--color-text--light);
+  border-radius: 4px;
+}

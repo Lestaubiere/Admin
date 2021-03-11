@@ -1,0 +1,29 @@
+.CM-ClientDetails {
+  color: var(--color-text);
+}
+
+.CM-ClientDetails__row {
+  display: flex;
+}
+
+.CM-ClientDetails__row:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.CM-ClientDetails__field:not(:last-child) {
+  margin-right: 80px;
+}
+
+.CM-ClientDetails__information:not(:last-child) {
+  margin-right: 50px;
+}
+
+.CM-ClientDetails__label {
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.CM-ClientDetails__people {
+  margin: 0;
+  padding-left: 28px;
+}

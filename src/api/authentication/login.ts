@@ -2,7 +2,7 @@ import { LestaubiereApi } from '..';
 import { User } from '../../types';
 
 export async function login(this: LestaubiereApi, email: string, password: string): Promise<User> {
-  const url = new URL(`${this.getBaseUrl()}/auth/login`);
+  const url = new URL(`${this.getBaseApiUrl()}/auth/login`);
 
   const response = await fetch(url.href, {
     method: 'POST',

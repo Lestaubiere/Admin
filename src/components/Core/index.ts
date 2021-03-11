@@ -1,5 +1,9 @@
 export { default as Button } from './Button';
 export { default as Counter } from './Counter';
 export { default as Input } from './Input';
+export { default as LoadingGradient } from './LoadingGradient';
 export { default as Notification } from './Notification';
+export { default as Pagination } from './Pagination';
+export { default as Select } from './Select';
 export { default as Spinner } from './Spinner';
+export { default as Status } from './Status';

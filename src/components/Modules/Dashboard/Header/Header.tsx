@@ -1,8 +1,9 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
+import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 
-import { useRoute } from '../../../../hooks';
+import { State } from '../../../../store';
 
 import { TopNavigation } from '../../../Blocks';
 
@@ -13,14 +14,17 @@ interface Props {
 }
 
 function Header(props: Props) {
-  const location = useLocation();
+  const { breadcrumbs, title } = useSelector((state: State) => state.navigationState);
 
-  const route = useRoute(location.pathname);
+  const location = useLocation();
 
   return (
     <div className="Header">
       <div className="Header__breadcrumbs">
-        {route?.items.map((item) => {
+        <Link className="Header__breadcrumbs-item" to="/">
+          Accueil
+        </Link>
+        {breadcrumbs.map((item) => {
           const classes = classNames('Header__breadcrumbs-item', {
             'Header__breadcrumbs-item--is-active': location.pathname === item.path,
           });
@@ -32,7 +36,7 @@ function Header(props: Props) {
           );
         })}
       </div>
-      <div className="Header__content">{route?.label}</div>
+      <div className="Header__content">{title}</div>
       {props.children && <div className="Header__navigation">{props.children}</div>}
     </div>
   );

@@ -1,0 +1,19 @@
+.Home__content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 32px 40px 136px;
+  margin: -20px;
+}
+
+.Home__column {
+  display: flex;
+  margin: 20px;
+}
+
+.Home__column.Home__column--1\/3 {
+  width: calc(100% / 3 - 40px);
+}
+
+.Home__column.Home__column--2\/3 {
+  width: calc(100% / 3 * 2 - 40px);
+}

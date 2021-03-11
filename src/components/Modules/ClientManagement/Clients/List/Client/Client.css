@@ -1,0 +1,67 @@
+.CM-Client {
+  margin-bottom: 16px;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.CM-Client__header {
+  display: flex;
+  align-items: center;
+  padding: 24px 40px;
+}
+
+.CM-Client__column {
+  flex-shrink: 0;
+  margin-right: 20px;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.CM-Client__column.CM-Client__column--title {
+  width: 100px;
+}
+
+.CM-Client__column.CM-Client__column--name {
+  width: 200px;
+}
+
+.CM-Client__column.CM-Client__column--email {
+  width: 350px;
+}
+
+.CM-Client__column.CM-Client__column--phone {
+  width: 200px;
+}
+
+.CM-Client__column.CM-Client__column--toggle {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.CM-Button__toggle {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.CM-Button__toggle .Icon {
+  margin-left: 6px;
+
+  transition: transform 0.3s ease;
+}
+
+.CM-Client__content-container {
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.CM-Client__content {
+  padding: 24px 40px;
+}
+
+.CM-Client.CM-Client--is-visible .CM-Button__toggle .Icon {
+  transform: rotate(180deg);
+}

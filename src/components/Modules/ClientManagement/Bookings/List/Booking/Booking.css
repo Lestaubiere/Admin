@@ -1,0 +1,80 @@
+.CM-Booking {
+  margin-bottom: 16px;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.CM-Booking__header {
+  display: flex;
+  align-items: center;
+  padding: 24px 40px;
+}
+
+.CM-Booking__column {
+  flex-shrink: 0;
+  margin-right: 20px;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.CM-Booking__column.CM-Booking__column--status {
+  width: 110px;
+}
+
+.CM-Booking__column.CM-Booking__column--title {
+  width: 100px;
+}
+
+.CM-Booking__column.CM-Booking__column--name {
+  width: 200px;
+}
+
+.CM-Booking__column.CM-Booking__column--season {
+  width: 60px;
+}
+
+.CM-Booking__column.CM-Booking__column--arrival {
+  width: 110px;
+}
+
+.CM-Booking__column.CM-Booking__column--departure {
+  width: 110px;
+}
+
+.CM-Booking__column.CM-Booking__column--created {
+  color: var(--color-text--light);
+  font-weight: normal;
+}
+
+.CM-Booking__column.CM-Booking__column--toggle {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.CM-Button__toggle {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.CM-Button__toggle .Icon {
+  margin-left: 6px;
+
+  transition: transform 0.3s ease;
+}
+
+.CM-Booking__content-container {
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.CM-Booking__content {
+  padding: 24px 40px;
+}
+
+.CM-Booking.CM-Booking--is-visible .CM-Button__toggle .Icon {
+  transform: rotate(180deg);
+}

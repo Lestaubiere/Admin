@@ -4,15 +4,27 @@ import thunk from 'redux-thunk';
 import { createBrowserHistory } from 'history';
 
 import { AppState, appReducer, AppActionTypes } from './app';
+import { StatisticsState, statisticsReducer, StatisticsActionTypes } from './statistics';
 import { BookingState, bookingReducer, BookingActionTypes } from './booking';
+import { ClientState, clientReducer, ClientActionTypes } from './client';
+import { NavigationState, navigationReducer, NavigationActionTypes } from './navigation';
 
 export type State = {
   router: RouterState;
   appState: AppState;
+  statisticsState: StatisticsState;
   bookingState: BookingState;
+  clientState: ClientState;
+  navigationState: NavigationState;
 };
 
-export type Action = RouterAction | AppActionTypes | BookingActionTypes;
+export type Action =
+  | RouterAction
+  | AppActionTypes
+  | StatisticsActionTypes
+  | BookingActionTypes
+  | ClientActionTypes
+  | NavigationActionTypes;
 
 export const history = createBrowserHistory();
 
@@ -22,7 +34,10 @@ export default function configureStore(): Store<State, Action> {
   const rootReducer = combineReducers<State>({
     router: connectRouter(history),
     appState: appReducer,
+    statisticsState: statisticsReducer,
     bookingState: bookingReducer,
+    clientState: clientReducer,
+    navigationState: navigationReducer,
   });
 
   const enhancers: any[] = [];

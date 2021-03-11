@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import { ReactElement, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 

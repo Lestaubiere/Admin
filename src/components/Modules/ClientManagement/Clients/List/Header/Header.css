@@ -1,0 +1,28 @@
+.CM-ClientsListHeader {
+  display: flex;
+  align-items: center;
+  margin: 0 40px;
+}
+
+.CM-ClientsListHeader-column {
+  flex-shrink: 0;
+  padding: 16px 0;
+  margin-right: 20px;
+  color: var(--color-text--light);
+}
+
+.CM-ClientsListHeader-column.CM-ClientsListHeader-column--title {
+  width: 100px;
+}
+
+.CM-ClientsListHeader-column.CM-ClientsListHeader-column--name {
+  width: 200px;
+}
+
+.CM-ClientsListHeader-column.CM-ClientsListHeader-column--email {
+  width: 350px;
+}
+
+.CM-ClientsListHeader-column.CM-ClientsListHeader-column--phone {
+  width: 200px;
+}

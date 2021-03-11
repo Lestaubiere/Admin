@@ -1,0 +1,46 @@
+.CM-ClientsFilters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.CM-ClientsFilters__column {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.CM-ClientsFilters__search {
+  width: 300px;
+}
+
+.CM-ClientsFilters__item {
+  width: 150px;
+}
+
+.CM-ClientsFilters__item:not(:last-child) {
+  margin-right: 25px;
+}
+
+.CM-ClientsFilters .Select__header,
+.CM-ClientsFilters .Select__label,
+.CM-ClientsFilters .Input__header,
+.CM-ClientsFilters .Input__label {
+  margin-bottom: 4px;
+  color: var(--color-text--light);
+  font-weight: 500;
+}
+
+.CM-ClientsFilters .Select__control {
+  height: 34px;
+}
+
+.CM-ClientsFilters .Input__input {
+  height: 36px;
+}
+
+.CM-ClientsFilters .Select__value-container,
+.CM-ClientsFilters .Input__input {
+  padding: 6px 8px;
+}

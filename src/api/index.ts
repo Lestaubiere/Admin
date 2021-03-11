@@ -1,5 +1,9 @@
+import { io, Socket } from 'socket.io-client';
+
+import * as app from './app';
 import * as authentication from './authentication';
 import * as bookings from './bookings';
+import * as clients from './clients';
 
 type Environment = 'local' | 'production';
 
@@ -16,7 +20,17 @@ export class LestaubiereApi {
     return LestaubiereApi.instance;
   }
 
+  public static getSocket(): Socket {
+    if (!LestaubiereApi.socket) {
+      LestaubiereApi.socket = io(LestaubiereApi.instance.getBaseUrl());
+    }
+
+    return LestaubiereApi.socket;
+  }
+
   private static instance: LestaubiereApi;
+
+  public static socket: Socket;
 
   private environment: Environment = 'production';
 
@@ -28,10 +42,14 @@ export class LestaubiereApi {
 
   protected getBaseUrl(): string {
     if (this.environment === 'local') {
-      return 'http://localhost:3333/api';
+      return 'http://localhost:3333';
     }
 
-    return 'https://api.lestaubiere.com/api';
+    return 'https://api.lestaubiere.com';
+  }
+
+  protected getBaseApiUrl(): string {
+    return `${this.getBaseUrl()}/api`;
   }
 
   protected getHeaders(): Headers {
@@ -51,9 +69,15 @@ export class LestaubiereApi {
     return this.environment;
   }
 
+  // APP
+  public getStatistics = app.getStatistics;
   // AUTHENTICATION
   public login = authentication.login;
   public getCurrentUser = authentication.getCurrentUser;
   // BOOKING
   public getBookings = bookings.getBookings;
+  public setBookingAsPending = bookings.setBookingAsPending;
+  // CLIENTS
+  public getClient = clients.getClient;
+  public getClients = clients.getClients;
 }

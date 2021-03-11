@@ -1,4 +1,3 @@
-import React from 'react';
 import { Switch, Route, useLocation } from 'react-router';
 
 import Login from './Login';

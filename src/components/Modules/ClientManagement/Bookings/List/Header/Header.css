@@ -1,0 +1,36 @@
+.CM-BookingsListHeader {
+  display: flex;
+  align-items: center;
+  margin: 0 40px;
+}
+
+.CM-BookingsListHeader-column {
+  flex-shrink: 0;
+  padding: 16px 0;
+  margin-right: 20px;
+  color: var(--color-text--light);
+}
+
+.CM-BookingsListHeader-column.CM-BookingsListHeader-column--status {
+  width: 110px;
+}
+
+.CM-BookingsListHeader-column.CM-BookingsListHeader-column--title {
+  width: 100px;
+}
+
+.CM-BookingsListHeader-column.CM-BookingsListHeader-column--name {
+  width: 200px;
+}
+
+.CM-BookingsListHeader-column.CM-BookingsListHeader-column--season {
+  width: 60px;
+}
+
+.CM-BookingsListHeader-column.CM-BookingsListHeader-column--arrival {
+  width: 110px;
+}
+
+.CM-BookingsListHeader-column.CM-BookingsListHeader-column--departure {
+  width: 110px;
+}

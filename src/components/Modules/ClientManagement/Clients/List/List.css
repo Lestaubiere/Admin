@@ -1,0 +1,15 @@
+.CM-ClientsList .CM-ClientsList__content {
+  transition: opacity 0.3s ease;
+}
+
+.CM-ClientsList.CM-ClientsList--loading .CM-ClientsList__content {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.CM-ClientsList__empty {
+  padding: 24px 40px;
+  background-color: #ffffff;
+  color: var(--color-text--light);
+  border-radius: 4px;
+}

@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import './Notification.css';
 
 interface Props {

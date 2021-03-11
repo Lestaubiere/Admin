@@ -1,18 +1,25 @@
 :root {
   --color-primary: rgba(78, 53, 180, 1);
   --color-primary--hover: rgba(78, 53, 180, 0.9);
+  --color-primary--light: rgba(78, 53, 180, 0.1);
+  --color-primary--lightest: rgba(78, 53, 180, 0.05);
   --color-secondary: rgba(217, 35, 127, 1);
   --color-secondary--hover: rgba(217, 35, 127, 0.9);
+  --color-secondary--light: rgba(217, 35, 127, 0.1);
+  --color-secondary--lightest: rgba(217, 35, 127, 0.05);
   --color-tertiary: rgba(90, 181, 191, 1);
   --color-tertiary--light: rgba(90, 181, 191, 0.1);
   --color-tertiary--lightest: rgba(90, 181, 191, 0.05);
 
   --color-text: #010e36;
+  --color-text--light: #666699;
 
   --color-grey-background: #f7f7fd;
   --color-grey-border: #e5e6ea;
 
-  --color-error: #cf5853;
+  --color-error: rgba(207, 88, 83, 1);
+  --color-error--light: rgba(207, 88, 83, 0.1);
+  --color-error--lightest: rgba(207, 88, 83, 0.05);
 
   --color-grey-2: rgba(1, 14, 54, 0.02);
   --color-grey-5: rgba(1, 14, 54, 0.05);

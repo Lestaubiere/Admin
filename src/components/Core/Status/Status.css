@@ -1,0 +1,48 @@
+.Status {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 14px 0 4px;
+  border-radius: 22px;
+  color: var(--color-text);
+  font-weight: 300;
+}
+
+.Status__bullet {
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border-radius: 6px;
+}
+
+.Status.Status--new {
+  background-color: var(--color-tertiary--lightest);
+}
+
+.Status.Status--new .Status__bullet {
+  background-color: var(--color-tertiary--light);
+}
+
+.Status.Status--pending {
+  background-color: var(--color-primary--lightest);
+}
+
+.Status.Status--pending .Status__bullet {
+  background-color: var(--color-primary--light);
+}
+
+.Status.Status--passed {
+  background-color: var(--color-secondary--lightest);
+}
+
+.Status.Status--passed .Status__bullet {
+  background-color: var(--color-secondary--light);
+}
+
+.Status.Status--canceled {
+  background-color: var(--color-error--lightest);
+}
+
+.Status.Status--canceled .Status__bullet {
+  background-color: var(--color-error--light);
+}

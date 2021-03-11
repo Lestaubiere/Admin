@@ -7,5 +7,6 @@ export interface IconProps {
 
 export { default as Handshake } from './Handshake';
 export { default as Home } from './Home';
+export { default as PartialArrowDown } from './PartialArrowDown';
 export { default as PartialArrowRight } from './PartialArrowRight';
 export { default as View } from './View';

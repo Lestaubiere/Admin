@@ -1,0 +1,46 @@
+.CM-BookingsFilters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.CM-BookingsFilters__column {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.CM-BookingsFilters__search {
+  width: 300px;
+}
+
+.CM-BookingsFilters__item {
+  width: 150px;
+}
+
+.CM-BookingsFilters__item:not(:last-child) {
+  margin-right: 25px;
+}
+
+.CM-BookingsFilters .Select__header,
+.CM-BookingsFilters .Select__label,
+.CM-BookingsFilters .Input__header,
+.CM-BookingsFilters .Input__label {
+  margin-bottom: 4px;
+  color: var(--color-text--light);
+  font-weight: 500;
+}
+
+.CM-BookingsFilters .Select__control {
+  height: 34px;
+}
+
+.CM-BookingsFilters .Input__input {
+  height: 36px;
+}
+
+.CM-BookingsFilters .Select__value-container,
+.CM-BookingsFilters .Input__input {
+  padding: 6px 8px;
+}

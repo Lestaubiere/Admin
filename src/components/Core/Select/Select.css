@@ -1,0 +1,98 @@
+.Select {
+  position: relative;
+
+  transition: margin 0.3s ease;
+}
+
+.Select__header {
+  margin-bottom: 10px;
+}
+
+.Select__label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--color-grey-100);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.Select__optional {
+  margin-left: 5px;
+  color: var(--color-grey-80);
+  font-weight: normal;
+}
+
+.Select__annotation {
+  color: var(--color-grey-70);
+}
+
+.Select__container {
+  transition: padding 0.3s ease;
+}
+
+.Select__input-container {
+  background-color: #ffffff;
+}
+
+.Select__input .Select__control {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  border-color: var(--color-grey-10);
+  border-radius: 0;
+  line-height: 22px;
+
+  transition: color 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.Select__input .Select__value-container {
+  padding: 17px 15px;
+}
+
+.Select__input .Select__single-value {
+  color: var(--color-grey-60);
+}
+
+.Select__input .Select__indicator-separator {
+  display: none;
+}
+
+.Select__input .Select__placeholder {
+  color: var(--color-grey-20);
+  opacity: 0.54;
+  font-style: italic;
+}
+
+.Select__errors {
+  position: absolute;
+  top: 34px;
+  color: var(--color-error);
+  font-size: 14px;
+  line-height: 1.1;
+  z-index: -1;
+
+  transition: top 0.3s ease;
+}
+
+/* NO VALUE STATE */
+.Select.Select--no-value .Select__input {
+  color: var(--color-grey-30);
+}
+
+/* DISABLED STATE */
+.Select.Select--disabled .Select__input {
+  opacity: 0.5;
+}
+
+/* ERROR STATE */
+.Select.Select--has-error .Select__container {
+  padding-bottom: 16px;
+}
+
+.Select.Select--has-error .Select__input .Select__control {
+  border-color: var(--color-error);
+}
+
+.Select.Select--has-error .Select__errors {
+  top: calc(100% - 12px);
+}

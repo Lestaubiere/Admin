@@ -1,3 +1,4 @@
+import { CallHistoryMethodAction, push } from 'connected-react-router';
 import { Dispatch } from 'redux';
 
 import { LestaubiereApi } from '../../api';
@@ -18,7 +19,9 @@ export const logoutUser = (user: User): logoutUserActionType => ({
   type: AppActions.LOGOUT_USER,
 });
 
-export const getCurrentUser = () => async (dispatch: Dispatch<getCurrentUserActionType>) => {
+export const getCurrentUser = () => async (
+  dispatch: Dispatch<getCurrentUserActionType | CallHistoryMethodAction>,
+) => {
   dispatch({ type: AppActions.FETCH_CURRENT_USER__REQUEST });
 
   try {
@@ -29,5 +32,7 @@ export const getCurrentUser = () => async (dispatch: Dispatch<getCurrentUserActi
     dispatch({
       type: AppActions.FETCH_CURRENT_USER__FAIL,
     });
+
+    dispatch(push('/'));
   }
 };

@@ -1,0 +1,25 @@
+.Home-BookingAmounts {
+  width: 100%;
+  padding: 24px 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.Home-BookingAmounts__row {
+  display: flex;
+  margin: -20px;
+}
+
+.Home-BookingAmounts__item {
+  margin: 20px;
+}
+
+.Home-BookingAmounts__amount {
+  color: var(--color-primary);
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.Home-BookingAmounts__text {
+  color: var(--color-text);
+}
